@@ -31,7 +31,7 @@ const chips = (job) =>
     `<div class="chips">`,
     ...(job.pay ? [`  <span class="chip pay money">${esc(job.pay)}</span>`] : []),
     ...job.chips.map((c) => `  <span class="chip">${esc(c)}</span>`),
-    ...(job.closes ? [`  <span class="chip">⏳ Apply by ${closing(job)}</span>`] : []),
+    ...(job.closes ? [`  <span class="chip">⏳ Open till ${closing(job)}</span>`] : []),
     `</div>`,
   ].join("\n")
 
@@ -158,7 +158,7 @@ const jobPage = (job) =>
   page({
     base: "../",
     meta: job.closes
-      ? { ...job.meta, description: `${job.meta.description} Apply by ${closing(job)}.`, ogDescription: `${job.meta.ogDescription} Apply by ${closing(job)}.` }
+      ? { ...job.meta, description: `${job.meta.description} Open till ${closing(job)}.`, ogDescription: `${job.meta.ogDescription} Open till ${closing(job)}.` }
       : job.meta,
     share: shareFor(job, `${SITE}/${job.slug}/`),
     headerCta: true,
