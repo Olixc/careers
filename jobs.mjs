@@ -1,6 +1,7 @@
 // Every open role. Edit here, then run `node build.mjs` and commit the pages it writes.
-// Titles, headings, chips, meta and table cells are plain text (the build escapes them);
+// Titles, headings, chips, labels, meta and table cells are plain text (the build escapes them);
 // lede, `p`, `list` items and applyText are HTML, so write &amp; there.
+// ogImage is a file inside the role's folder; it is the preview WhatsApp and LinkedIn show.
 
 export const jobs = [
   {
@@ -9,12 +10,13 @@ export const jobs = [
     city: "Lagos",
     meta: {
       title: "Experience & Growth Marketing Lead · Fiilar Careers (Lagos)",
-      description: "Fiilar is hiring an Experience & Growth Marketing Lead in Lagos. Full-time, reporting to the CEO. Own and drive Fiilar's end-to-end growth and marketing strategy. Apply now.",
+      description: "Fiilar is hiring an Experience & Growth Marketing Lead in Lagos. Full-time, reporting to the CMO. Own and drive Fiilar's end-to-end growth and marketing strategy. Apply now.",
       ogTitle: "We're hiring: Experience & Growth Marketing Lead at Fiilar",
-      ogDescription: "Full-time · Lagos · Reports to the CEO. Own Fiilar's growth and marketing. Apply today.",
+      ogDescription: "Full-time · Lagos · Reports to the CMO. Own Fiilar's growth and marketing. Apply today.",
     },
     lede: "You will own and drive Fiilar's end-to-end growth and marketing strategy, ensuring that our marketing activities translate into measurable business outcomes.",
-    chips: ["📍 Lagos, Nigeria", "💼 Full-time", "📈 Growth & Marketing", "👤 Reports to CEO / Founder"],
+    chips: ["📍 Lagos, Nigeria", "💼 Full-time", "📈 Growth & Marketing", "👤 Reports to CMO"],
+    ogImage: "og.jpg",
     sections: [
       {
         title: "About Fiilar",
@@ -157,37 +159,6 @@ export const jobs = [
         ],
       },
       {
-        title: "First 90-Day Expectations",
-        blocks: [
-          { h3: "First 30 Days: Audit, Strategy & Alignment" },
-          { list: [
-            "Understand Fiilar's product, positioning, business model, and target markets.",
-            "Audit existing marketing activities and host acquisition processes.",
-            "Review existing host and customer acquisition funnels.",
-            "Develop a comprehensive 90-day growth execution strategy.",
-            "Establish KPIs, reporting structures, and team accountability processes.",
-            "Identify immediate growth opportunities.",
-          ] },
-          { h3: "Days 31–60: Execution & Market Activation" },
-          { list: [
-            "Launch targeted host acquisition campaigns.",
-            "Coordinate onboarding agents and improve host conversion processes.",
-            "Execute at least two measurable experiential marketing initiatives.",
-            "Launch targeted customer acquisition campaigns.",
-            "Establish strategic partnerships and creator collaborations.",
-            "Begin tracking acquisition costs and conversion performance.",
-          ] },
-          { h3: "Days 61–90: Optimization & Scale" },
-          { list: [
-            "Evaluate campaign performance and optimize successful channels.",
-            "Improve host activation and customer booking conversion.",
-            "Develop repeatable acquisition processes.",
-            "Build a pipeline of strategic partners.",
-            "Present a performance report highlighting growth achieved, challenges, lessons, and the next quarter's strategy.",
-          ] },
-        ],
-      },
-      {
         title: "Why Join Fiilar?",
         blocks: [
           { p: "This is an opportunity to join an ambitious technology startup at an important stage of its growth." },
@@ -203,6 +174,8 @@ export const jobs = [
         ],
       },
     ],
+    applyLabel: "Send your resume and cover letter to",
+    applyFields: ["Name:", "Phone:", "LinkedIn:", "", "My resume and cover letter are attached."],
     applyText: "<strong>If you are passionate about building brands, creating experiences, driving measurable growth, and turning ambitious ideas into business results, we would love to hear from you.</strong>",
   },
   {
@@ -252,7 +225,7 @@ export const jobs = [
         title: "What we offer",
         blocks: [
           { list: [
-            "<strong>₦100,000 per month.</strong>",
+            "<strong class=\"money\">₦100,000 per month.</strong>",
             "Hands-on training and mentorship to grow your sales career.",
             "A chance to help build one of Nigeria's most exciting marketplaces from the ground up.",
           ] },

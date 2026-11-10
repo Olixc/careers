@@ -11,10 +11,8 @@
   <meta property="og:title" content="We're hiring: Onboarding Agent — Fiilar" />
   <meta property="og:description" content="₦100,000/month · Lagos · Help onboard amazing spaces to Fiilar. Apply today." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://careers.fiilar.com/onboarding-agent/" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -34,7 +32,7 @@
         <p class="lede">Help bring Lagos's best spaces onto Fiilar — meet space owners, sign them up, and grow the marketplace people love to book.</p>
 
         <div class="chips">
-          <span class="chip pay">₦100,000 / month</span>
+          <span class="chip pay money">₦100,000 / month</span>
           <span class="chip">📍 Lagos, Nigeria</span>
           <span class="chip">🤝 Sales &amp; Onboarding</span>
           <span class="chip">🌱 Entry level (0–1 yr)</span>
@@ -72,7 +70,7 @@
       <section class="block">
         <h2>What we offer</h2>
         <ul class="list">
-          <li><strong>₦100,000 per month.</strong></li>
+          <li><strong class="money">₦100,000 per month.</strong></li>
           <li>Hands-on training and mentorship to grow your sales career.</li>
           <li>A chance to help build one of Nigeria's most exciting marketplaces from the ground up.</li>
         </ul>
@@ -90,7 +88,7 @@
               </div>
               <div>
                 <div class="label">Apply via email</div>
-                <div class="val"><a href="mailto:info@fiilar.com?subject=Application%3A%20Onboarding%20Agent%20(Lagos)">info@fiilar.com</a></div>
+                <div class="val"><a href="mailto:info@fiilar.com?subject=Application%3A%20Onboarding%20Agent%20(Lagos)">info@fiilar.com</a> <button class="copy" type="button" data-copy="info@fiilar.com" hidden>Copy</button></div>
               </div>
             </div>
           </div>
@@ -117,6 +115,27 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Many in-app browsers refuse navigator.clipboard; execCommand still copies there.
+    const copy = async (text) => {
+      try { await navigator.clipboard.writeText(text); return true } catch {}
+      const t = Object.assign(document.createElement("textarea"), { value: text })
+      document.body.append(t)
+      t.select()
+      const ok = document.execCommand("copy")
+      t.remove()
+      return ok
+    }
+    for (const b of document.querySelectorAll("[data-copy]")) {
+      b.hidden = false
+      b.addEventListener("click", async () => {
+        if (!(await copy(b.dataset.copy))) return
+        b.textContent = "Copied"
+        setTimeout(() => (b.textContent = "Copy"), 2000)
+      })
+    }
+  </script>
 
 </body>
 </html>

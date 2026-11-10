@@ -1,6 +1,11 @@
 :root {
-  --brand: #EB4D2B;
-  --brand-dark: #cf3f20;
+  --brand: #E74C3C;
+  --brand-dark: #cb4335;
+  --brand-tint: #fce8e6;
+  /* Fiilar's stack (fiilar-webapp main.css): 'SF Pro Rounded' must come before -apple-system or Chrome draws SF Pro Text. */
+  --font-sans: ui-rounded, 'SF Pro Rounded', -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  /* Amounts are never rounded: that face draws the Naira sign with a single bar. */
+  --font-money: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial, sans-serif;
   --ink: #15171a;
   --grey: #5b6470;
   --line: #e7e9ee;
@@ -10,7 +15,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sans);
   color: var(--ink);
   background: #fff;
   line-height: 1.6;
@@ -30,11 +35,11 @@ header { padding: 22px 0; border-bottom: 1px solid var(--line); position: sticky
 /* Hero */
 .hero { padding: 56px 0 40px; }
 .tag {
-  display: inline-block; background: #fdeae5; color: var(--brand);
+  display: inline-block; background: var(--brand-tint); color: var(--brand);
   font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase;
   padding: 7px 14px; border-radius: 999px; margin-bottom: 20px;
 }
-h1 { font-size: clamp(36px, 8vw, 56px); font-weight: 900; letter-spacing: -0.035em; line-height: 1.05; }
+h1 { font-size: clamp(36px, 8vw, 56px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; }
 .lede { font-size: clamp(17px, 2.4vw, 20px); color: var(--grey); margin-top: 16px; max-width: 560px; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
@@ -57,7 +62,8 @@ h1 { font-size: clamp(36px, 8vw, 56px); font-weight: 900; letter-spacing: -0.035
 
 /* Sections */
 section.block { padding: 40px 0; border-top: 1px solid var(--line); }
-h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 18px; }
+h2 { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 18px; }
+.money { font-family: var(--font-money); font-variant-numeric: tabular-nums; }
 .block p { color: var(--grey); font-size: 16.5px; }
 
 ul.list { list-style: none; display: grid; gap: 14px; }
@@ -65,8 +71,8 @@ ul.list li { position: relative; padding-left: 32px; font-size: 16.5px; color: v
 ul.list li::before {
   content: ""; position: absolute; left: 0; top: 9px;
   width: 18px; height: 18px; border-radius: 50%;
-  background: #fdeae5;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23EB4D2B' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  background: var(--brand-tint);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23E74C3C' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-position: center;
 }
 ul.list li strong { font-weight: 700; }
@@ -84,7 +90,8 @@ ul.list li strong { font-weight: 700; }
   border: 1px solid var(--line); display: grid; place-items: center; color: var(--brand);
 }
 .apply-row .label { font-size: 13px; color: var(--grey); }
-.apply-row .val { font-weight: 700; font-size: 16.5px; color: var(--ink); }
+.apply-row .val { font-weight: 700; font-size: 16.5px; color: var(--ink); display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.copy { font: inherit; font-size: 13px; font-weight: 600; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
 .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
 
 /* Footer */
