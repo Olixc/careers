@@ -17,7 +17,7 @@ export const jobs = [
     lede: "You will own and drive Fiilar's end-to-end growth and marketing strategy, ensuring that our marketing activities translate into measurable business outcomes.",
     chips: ["📍 Lagos, Nigeria", "💼 Full-time", "📈 Growth & Marketing", "👤 Reports to CMO"],
     ogImage: "og.jpg",
-    closes: "2026-11-30",
+    closes: "2026-11-20",
     sections: [
       {
         title: "About Fiilar",
