@@ -83,6 +83,7 @@ ul.list li strong { font-weight: 700; }
   border-radius: var(--radius); padding: 32px 28px; margin-top: 8px;
 }
 .apply-card h2 { margin-bottom: 8px; }
+.apply-card .closes { margin-top: 12px; color: var(--ink); font-weight: 600; }
 .apply-methods { display: grid; gap: 14px; margin-top: 22px; }
 .apply-row { display: flex; align-items: center; gap: 14px; font-size: 16px; }
 .apply-row .ic {

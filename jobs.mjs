@@ -10,13 +10,14 @@ export const jobs = [
     city: "Lagos",
     meta: {
       title: "Experience & Growth Marketing Lead · Fiilar Careers (Lagos)",
-      description: "Fiilar is hiring an Experience & Growth Marketing Lead in Lagos. Full-time, reporting to the CMO. Own and drive Fiilar's end-to-end growth and marketing strategy. Apply now.",
+      description: "Fiilar is hiring an Experience & Growth Marketing Lead in Lagos. Full-time, reporting to the CMO. Own and drive Fiilar's end-to-end growth and marketing strategy.",
       ogTitle: "We're hiring: Experience & Growth Marketing Lead at Fiilar",
-      ogDescription: "Full-time · Lagos · Reports to the CMO. Own Fiilar's growth and marketing. Apply today.",
+      ogDescription: "Full-time · Lagos · Reports to the CMO. Own Fiilar's growth and marketing.",
     },
     lede: "You will own and drive Fiilar's end-to-end growth and marketing strategy, ensuring that our marketing activities translate into measurable business outcomes.",
     chips: ["📍 Lagos, Nigeria", "💼 Full-time", "📈 Growth & Marketing", "👤 Reports to CMO"],
     ogImage: "og.jpg",
+    closes: "2026-11-30",
     sections: [
       {
         title: "About Fiilar",
