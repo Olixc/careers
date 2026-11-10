@@ -11,10 +11,11 @@
   <meta property="og:title" content="We're hiring at Fiilar" />
   <meta property="og:description" content="Open roles in Lagos: Experience &amp; Growth Marketing Lead, Onboarding Agent. Apply today." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://careers.fiilar.com/" />
+  <meta property="og:image" content="https://careers.fiilar.com/experience-growth-marketing-lead/og.jpg" />
+  <meta property="og:image:alt" content="We're hiring: Experience &amp; Growth Marketing Lead at Fiilar" />
+  <meta name="twitter:card" content="summary" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -40,14 +41,14 @@
               <span class="chip">📍 Lagos, Nigeria</span>
               <span class="chip">💼 Full-time</span>
               <span class="chip">📈 Growth &amp; Marketing</span>
-              <span class="chip">👤 Reports to CEO / Founder</span>
+              <span class="chip">👤 Reports to CMO</span>
             </div>
             <span class="more">View role →</span>
           </a>
           <a class="role" href="onboarding-agent/">
             <h2>Onboarding Agent</h2>
             <div class="chips">
-              <span class="chip pay">₦100,000 / month</span>
+              <span class="chip pay money">₦100,000 / month</span>
               <span class="chip">📍 Lagos, Nigeria</span>
               <span class="chip">🤝 Sales &amp; Onboarding</span>
               <span class="chip">🌱 Entry level (0–1 yr)</span>
@@ -68,6 +69,27 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Many in-app browsers refuse navigator.clipboard; execCommand still copies there.
+    const copy = async (text) => {
+      try { await navigator.clipboard.writeText(text); return true } catch {}
+      const t = Object.assign(document.createElement("textarea"), { value: text })
+      document.body.append(t)
+      t.select()
+      const ok = document.execCommand("copy")
+      t.remove()
+      return ok
+    }
+    for (const b of document.querySelectorAll("[data-copy]")) {
+      b.hidden = false
+      b.addEventListener("click", async () => {
+        if (!(await copy(b.dataset.copy))) return
+        b.textContent = "Copied"
+        setTimeout(() => (b.textContent = "Copy"), 2000)
+      })
+    }
+  </script>
 
 </body>
 </html>
